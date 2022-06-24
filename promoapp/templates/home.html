@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div style="width: 450px;  margin: 0 auto; padding: 10px;">
+    {% if user.is_authenticated %}
+    Hi {{ user.username }}!
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+    {% else %}
+    <h2>Welcome to PromoApp</h2>
+    <p>Login or Create your account</p>
+    <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+    <a href="{% url 'signup' %}" class="btn btn-primary">SignUp</a>
+    {% endif %}
+</div>
+{% endblock %}

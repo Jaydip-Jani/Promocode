@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+    </style>
+</head>
+<body>
+<h2 style="text-align: center;">Coupon Codes</h2>
+<h2 style="text-align: left;">
+
+
+</h2>
+
+<table>
+    <tr>
+        <th>Code</th>
+
+        <!--        <th>Gender</th>-->
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Discount</th>
+        <th>Discount_type</th>
+        <th>no_uses</th>
+        <th>user_limit</th>
+        <th>Action</th>
+        <!--        <th>is_active</th>-->
+    </tr>
+    {% for code in codes %}
+    <tr>
+        <td>{{code.code}}
+            <!--        <td>{{code.display_gender}}</td>-->
+        <td>{{code.start_date}}</td>
+        <td>{{code.expiration_date}}</td>
+        <td>{{code.discount}}</td>
+        <td>{{code.discount_type}}</td>
+        <td>{{code.number_of_uses}}</td>
+        <td>{{code.per_user_limit}}</td>
+
+        <td>
+            <a href="/add_code">Add Coupon</a><br>
+            <a href="/edit_coupon/{{ code.id }}">Edit</a><br>
+            <a href="/delcoupon/{{ code.id }}">Delete</a><br>
+        </td>
+        <!--        <td>{{code.is_active}}</td>-->
+    </tr>
+    {% endfor %}
+</table>
+<center>
+<p><a href="{% url 'add_coupon_order' %}">Coupon_Order</a></p>
+<p><a href="{% url 'get_user_data' %}">Get_User_Data</a></p>
+<p><a href="{% url 'logout' %}">Logout</a></p>
+</center>
+</body>
+</html>

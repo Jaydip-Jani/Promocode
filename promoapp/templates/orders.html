@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+    </style>
+</head>
+<body>
+<h2 style="text-align: center;">Coupon Order </h2>
+<table>
+    <tr>
+        <th>User</th>
+        <th>Code</th>
+        <th>Order Total Price</th>
+        <th>Discount Price</th>
+        <th>Order total amount (After Discount Applied)</th>
+    </tr>
+    {% for code in codes %}
+    <tr>
+        <td>{{code.user.username}}</td>
+        <td>{{code.coupon.code}}</td>
+        <td>{{code.order_amount}}</td>
+        <td>{{code.discount_amout}}</td>
+        <td>{{code.total_amount}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<center>
+    <p><a href="{% url 'get_user_data' %}">Get_User_Data</a></p>
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+</center>
+
+</body>
+</html>

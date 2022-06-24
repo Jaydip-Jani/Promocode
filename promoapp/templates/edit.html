@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<form action="" method="post" class="post-form" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ codes.as_p }}
+
+<!--    CODE : <input type="text"  value="{{ codes.code }}">-->
+<!--    start : <input type="datetime-local"  value="{{ codes.start_date }}">-->
+<!--    end : <input type="datetime-local" value="{{ codes.expiration_date }}">-->
+<!--    dis_type : <input type="text" value="{{ codes.discount_type }}">-->
+<!--    dis : <input type="text"  value="{{ codes.discount }}">-->
+<!--    no_uses : <input type="text" value="{{ codes.number_of_uses }}">-->
+<!--    user_limit : <input type="text"  value="{{ codes.per_user_limit }}">-->
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

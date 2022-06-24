@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New_Code</title>
+</head>
+<body>
+
+
+
+<h2 style="text-align: center;">Add New Coupon</h2>
+<form action="" method="post">
+    {% csrf_token %}
+    <center>
+    {{ form.as_p }}
+
+    <input type="submit" value="Submit">
+    </center>
+</form>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script>
+  $( function() {
+    $( "#id_start_date" ).datepicker();
+    $( "#id_expiration_date" ).datepicker();
+  } );
+
+
+</script>
+
+<center>
+    <p><a href="{% url 'get_code' %}">Get_Code</a></p>
+</center>
+
+</body>
+</html>
+
+
